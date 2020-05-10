@@ -1,4 +1,3 @@
-<!-- <app-topbar pagetitle="Business Categories"></app-topbar> -->
 <ion-header translucent="true">
     <ion-toolbar color="success">
         <ion-buttons slot="start">
@@ -8,9 +7,52 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<super-tabs>
+    <super-tabs-toolbar slot="top">
+        <super-tab-button>
+            <!-- <ion-icon name="home"></ion-icon> -->
+            <ion-label>Requirements</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <!-- <ion-icon name="home"></ion-icon> -->
+            <ion-label>Sell</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <!-- <ion-icon name="home"></ion-icon> -->
+            <ion-label>Vacancies</ion-label>
+        </super-tab-button>
+    </super-tabs-toolbar>
+    <super-tabs-container>
+        <super-tab>
+            <ion-content>
+                <div class="noRecordContainer">
+                    <ion-text>
+                      <b>Content Coming Soon .....</b>
+                    </ion-text>
+                  </div>
+            </ion-content>
+        </super-tab>
+        <super-tab>
+            <ion-content>
+                <div class="noRecordContainer">
+                    <ion-text>
+                      <b>Content Coming Soon .....</b>
+                    </ion-text>
+                  </div>
+            </ion-content>
+        </super-tab>
+        <super-tab>
+            <ion-content>
+                <div class="noRecordContainer">
+                    <ion-text>
+                      <b>Content Coming Soon .....</b>
+                    </ion-text>
+                  </div>
+            </ion-content>
+        </super-tab>
+    </super-tabs-container>
+</super-tabs>
 
-</ion-content>
 <!-- <ion-footer>
     <ion-title class="ion-text-center">
         <ion-button (click)="logutfn()" color="success">

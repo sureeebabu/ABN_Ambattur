@@ -13,6 +13,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { SMS } from '@ionic-native/sms/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
     HttpClientModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(),
+    SuperTabsModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule
   ],

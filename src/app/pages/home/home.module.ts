@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    Ng2SearchPipeModule,
+    SuperTabsModule,
     HomePageRoutingModule
   ],
   declarations: [HomePage]
