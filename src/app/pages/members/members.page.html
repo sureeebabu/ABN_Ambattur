@@ -1,0 +1,97 @@
+<!-- <app-topbar pagetitle="Business Categories"></app-topbar> -->
+<ion-header translucent="true">
+    <ion-toolbar color="success">
+        <ion-buttons *ngIf="!showSearchbar" slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title *ngIf="!showSearchbar">Bussiness Category</ion-title>
+        <!-- <ion-searchbar *ngIf="showSearchbar" showCancelButton="true" animated="true" (ionInput)="onSearch($event)"
+            (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar> -->
+        <ion-searchbar *ngIf="showSearchbar" showCancelButton="true" (ionCancel)="onCancelSearch()" placeholder="Search"
+            [(ngModel)]="term" animated="true"></ion-searchbar>
+
+        <ion-buttons slot="end">
+            <ion-button *ngIf="!showSearchbar" (click)="showSearchbar = true">
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let j of json | filter:term" size="4" class="animated rubberBand" routerLink="/memberslist"
+                routerDirection="forward">
+                <div class="card-square card">
+                    <img [src]="j.img" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">{{j.title}}</ion-text>
+                </div>
+            </ion-col>
+            <!-- <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/diamond.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Diamonds</ion-text>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/education.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Education</ion-text>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/electrical.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Electrical</ion-text>
+                </div>
+            </ion-col>
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/energy.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Energy</ion-text>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/leaf.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Environment</ion-text>
+                </div>
+            </ion-col>
+
+
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/financial.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Financial</ion-text>
+                </div>
+            </ion-col>
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/government.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Government</ion-text>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" class="animated rubberBand">
+                <div class="card-square card">
+                    <img src="../../../assets/`.png" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">Health Care</ion-text>
+                </div>
+            </ion-col> -->
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<!-- <ion-footer>
+    <ion-title class="ion-text-center">
+        <ion-button (click)="logutfn()" color="success">
+            Logout
+        </ion-button>
+    </ion-title>
+</ion-footer> -->

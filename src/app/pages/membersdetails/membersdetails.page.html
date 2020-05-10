@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/memberslist"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Arun Kumar ( 2003 E & I )</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <!-- <img src="../../../assets/noImg.png" class="img-responsive" style="width:100%;height:38%" > -->
+  <div class="container1">
+    <img src="../../../assets/speaker-background.png" style="width:100%;">
+    <!-- <div class="bottom-left">Bottom Left</div>
+    <div class="top-left">
+      <i class="fa fa-arrow-left fa-1x" style="color: white;" routerLink="/members"></i>
+    </div>
+    <div class="top-right">Top Right</div>
+    <div class="bottom-right">Bottom Right</div> -->
+    <div class="centered">
+      <img src="../../../assets/noImg.png" alt="" class="rounded-circle" style="width: 150px; height: 150px;">
+      <!-- <p>
+        <ion-text color="primary"><b>User Name</b></ion-text>
+      </p> -->
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row >
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="animated rubberBand" color="success" (click)="callFn()">
+          <ion-icon slot="start" name="call-outline"></ion-icon> CALL
+        </ion-button>
+        <ion-button class="animated rubberBand" color="success" (click)="smsFn()">
+          <i class="fa fa-comments fa-2x" slot="start"></i>&nbsp;SMS
+        </ion-button>
+        <ion-button class="animated rubberBand" color="success" (click)="shareFn()">
+          <ion-icon ios="logo-whatsapp" md="logo-whatsapp"></ion-icon>&nbsp;Whatsapp
+        </ion-button>
+      </ion-col>
+      <!-- <ion-col size="4" class="ion-text-right">
+        <ion-button class="animated rubberBand" color="success" (click)="smsFn()">
+          <i class="fa fa-comments fa-2x" slot="start"></i>&nbsp;SMS
+        </ion-button>
+      </ion-col>
+      <ion-col size="5" class="ion-text-left">
+        <ion-button class="animated rubberBand" color="success" (click)="shareFn()">
+          <ion-icon ios="logo-whatsapp" md="logo-whatsapp"></ion-icon>&nbsp;Whatsapp
+        </ion-button>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+
+  <ion-segment color="success" [(ngModel)]="type">
+    <ion-segment-button value="business" color="danger" checked>
+      <i class="fa fa-building fa-2x"></i>
+    </ion-segment-button>
+    <!-- <ion-segment-button value="profile">
+      <i class="fa fa-user fa-2x"></i>
+    </ion-segment-button> -->
+    <ion-segment-button value="location">
+      <i class="fa fa-map-marker fa-2x"></i>
+
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'business'">
+
+      <div class="ion-padding">
+        <div class="card">
+          <div class="card-header">
+            My Business Details
+          </div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Title</h5> -->
+            <p class="card-text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s.
+            </p>
+          </div>
+        </div>&nbsp;
+        <div class="card">
+          <div class="card-header">
+            My Product and Services
+          </div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Title</h5> -->
+            <p class="card-text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s.
+            </p>
+          </div>
+        </div>&nbsp;
+     
+        <div class="card">
+          <div class="card-header">
+            Keywords
+          </div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Title</h5> -->
+            <p class="card-text">
+              <ion-chip outline color="success">
+                <ion-label>ERP</ion-label>
+              </ion-chip>
+              <ion-chip outline color="warning">
+                <ion-label>Mobile Development</ion-label>
+              </ion-chip>
+              <ion-chip outline color="tertiary">
+                <ion-label>CMS</ion-label>
+              </ion-chip>
+              <ion-chip outline color="danger">
+                <ion-label>Website Development</ion-label>
+              </ion-chip>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <form class="ion-padding" [formGroup]="validationsForm" (ngSubmit)="onSubmit(validationsForm.value)">
+
+
+        <div class="form-group">
+          <label for="buss">My Business Details</label>
+          <input type="text" formControlName="businessDetails" class="form-control" id="buss">
+        </div>
+        <div class="form-group">
+          <label for="prod">My Product and Services</label>
+          <input type="text" formControlName="product" class="form-control" id="prod">
+        </div>
+
+        <div class="form-group">
+          <label for="keywords">Keywords</label>
+          <input type="text" formControlName="keywords" class="form-control" id="keywords">
+        </div>
+
+        <ion-button expand="block" fill="outline" color="success" type="submit" [disabled]="!validationsForm.valid">
+          Submit
+        </ion-button>
+
+
+
+
+      </form> -->
+
+    </ion-list>
+
+    <!-- <ion-list *ngSwitchCase="'profile'" style="height: 400px;">
+      <div class="noRecordContainer">
+        <ion-text color="success">
+          <b>Content Coming Soon .....</b>
+        </ion-text>
+      </div>
+
+    </ion-list> -->
+
+    <ion-list *ngSwitchCase="'location'">
+
+      <ion-card>
+        <div class="ion-padding">
+          <div class="form-group">
+            <label>Email address</label>
+            <strong class="form-text text-muted">example@gmail.com</strong>
+          </div>
+
+          <div class="form-group">
+            <label>Mobile No</label>
+            <strong class="form-text text-muted">7904768050</strong>
+          </div>
+
+          <div class="form-group">
+            <label>Address</label>
+            <strong class="form-text text-muted">
+              Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Chennai - 600001.
+            </strong>
+          </div>
+        </div>
+      
+      </ion-card>
+
+      <!-- <div class="noRecordContainer">
+        <ion-text color="success">
+          <b>Content Coming Soon .....</b>
+        </ion-text>
+      </div> -->
+    </ion-list>
+  </div>
+</ion-content>
