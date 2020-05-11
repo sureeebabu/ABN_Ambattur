@@ -66,6 +66,10 @@ const routes: Routes = [
     path: 'myjobs',
     loadChildren: () => import('./pages/myjobs/myjobs.module').then( m => m.MyjobsPageModule)
   },
+  {
+    path: 'achievement',
+    loadChildren: () => import('./pages/achievement/achievement.module').then( m => m.AchievementPageModule)
+  },
 ];
 
 @NgModule({

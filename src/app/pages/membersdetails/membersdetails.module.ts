@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { MembersdetailsPageRoutingModule } from './membersdetails-routing.module';
 import { MembersdetailsPage } from './membersdetails.page';
-
 @NgModule({
   imports: [
     CommonModule,

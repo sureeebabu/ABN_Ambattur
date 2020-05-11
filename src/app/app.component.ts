@@ -31,6 +31,11 @@ export class AppComponent {
       icon: 'newspaper'
     },
     {
+      title: 'Achievements',
+      url: '/achievement',
+      icon: 'trophy'
+    },
+    {
       title: 'My Requirements',
       url: '/myrequirements',
       icon: 'reader'
