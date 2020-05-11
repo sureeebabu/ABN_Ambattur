@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { MenuController, Platform, AlertController } from '@ionic/angular';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -19,11 +19,17 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
     private platform: Platform,
     private alertCtrl: AlertController,
     private router: Router,
+    private http: HttpClient
   ) {
     this.menuCtrl.enable(true);
   }
 
   ngOnInit() {
+    // this.http.get('http://localhost:3000/api/v1/users/').subscribe(result => {
+    //   console.log(result);
+    // }, error => {
+    //   console.log(error);
+    // });
   }
 
   ngAfterViewInit() {
