@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -35,23 +34,23 @@ export class AppComponent {
       url: '/achievement',
       icon: 'trophy'
     },
+    // {
+    //   title: 'My Requirements',
+    //   url: '/myrequirements',
+    //   icon: 'reader'
+    // },
+    // {
+    //   title: 'My Jobs',
+    //   url: '/myjobs',
+    //   icon: 'file-tray-full'
+    // },
+    // {
+    //   title: 'My Profile',
+    //   url: '/profile',
+    //   icon: 'pencil'
+    // },
     {
-      title: 'My Requirements',
-      url: '/myrequirements',
-      icon: 'reader'
-    },
-    {
-      title: 'My Jobs',
-      url: '/myjobs',
-      icon: 'file-tray-full'
-    },
-    {
-      title: 'My Profile',
-      url: '/profile',
-      icon: 'pencil'
-    },
-    {
-      title: 'ABN Ambattur',
+      title: 'About ABN Ambattur',
       url: '/aboutus',
       icon: 'information-circle'
     },
@@ -60,11 +59,11 @@ export class AppComponent {
       url: '/contactus',
       icon: 'call'
     },
-    {
-      title: 'Change Password',
-      url: '/changepwd',
-      icon: 'lock-closed'
-    }
+    // {
+    //   title: 'Change Password',
+    //   url: '/changepwd',
+    //   icon: 'lock-closed'
+    // }
   ];
 
   constructor(
