@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { NewseventsPageRoutingModule } from './newsevents-routing.module';
 import { NewseventsPage } from './newsevents.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
@@ -12,6 +13,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     ComponentsModule,
+    LazyLoadImageModule.forRoot({
+      preset: intersectionObserverPreset
+    }),
     NewseventsPageRoutingModule
   ],
   declarations: [NewseventsPage]

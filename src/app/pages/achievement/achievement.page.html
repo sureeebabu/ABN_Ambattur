@@ -2,7 +2,19 @@
 <ion-content class="ion-no-padding">
   <ion-list lines="full">
 
-    <ion-item>
+    <ion-item *ngFor="let a of achieveJson">
+      <ion-thumbnail slot="start">
+        <img [defaultImage]="'../../../assets/lazyImg.png'" [lazyLoad]="a.achievementImage" style="height: 100px;" alt="noImg" />
+      </ion-thumbnail>
+      <ion-label>
+        <b [innerHTML]="a.achievementTitle"></b>
+        <p class="ion-text-wrap" [innerHTML]="a.achievementDescription"></p>
+        <p><i class="fa fa-clock-o"></i>&nbsp;{{a.achievementDate | date:'d MMM yyyy hh:mm:ss a'}}</p>
+        <p *ngIf="a.achievementDescription.length < 45" >&nbsp;</p>
+      </ion-label>
+    </ion-item>
+
+    <!-- <ion-item>
       <ion-thumbnail slot="start">
         <img src="../../../assets/noImg.png">
       </ion-thumbnail>
@@ -33,7 +45,7 @@
         <p class="ion-text-wrap">Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p>
         <p><i class="fa fa-user"></i>&nbsp; suresh &nbsp;<i class="fa fa-clock-o"></i>&nbsp;20 May 2020</p>
       </ion-label>
-    </ion-item>
+    </ion-item> -->
 
   </ion-list>
 </ion-content>

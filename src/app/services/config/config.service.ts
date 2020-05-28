@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ConfigService {
 
-  public rootUrl: string = 'https://www.daijiworld.com/';
+  public rootUrl: string = 'http://abn.arkaautomaations.com/API/';
   // headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(
     private http: HttpClient

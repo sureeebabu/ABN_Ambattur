@@ -11,16 +11,15 @@ export class LoaderService {
     private loadingCtrl: LoadingController
   ) { }
 
-  async present(msg) {
+  async presentFn(msg) {
     this.isLoading = true;
     return await this.loadingCtrl.create({
+      spinner: 'circular',
       message: msg,     //  message : `<img src="assets/loading.gif" class="img-align" /> <br/> <div class='ion-text-center'>${msg}</div> `,
-      spinner: 'crescent',
-      // spin,  // "bubbles" | "circles" | "circular" | "crescent" | "dots" | "lines" | "lines-small" | null | undefined
-      // cssClass: 'custom-loader-class',   // Write CSS in global.css
+      // spinner: spin,  // "bubbles" | "circles" | "circular" | "crescent" | "dots" | "lines" | "lines-small" | null | undefined
+      cssClass: 'custom-loader-class',   // Write CSS in global.css
       // mode : 'ios',
-      duration: 20000,
-      cssClass: 'custom-loader-class',  // check in custom.scss file
+      // duration: 10000,
     }).then(a => {
       a.present().then(() => {
         console.log('presented');
@@ -30,7 +29,6 @@ export class LoaderService {
       });
     });
   }
-
   async dismiss() {
     this.isLoading = false;
     return await this.loadingCtrl.dismiss().then(() => console.log('dismissed'));
