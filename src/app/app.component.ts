@@ -3,6 +3,7 @@ import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthenticationService } from './services/auth/authentication.service';
+import { AlertFnService } from './services/alert/alert-fn.service';
 
 @Component({
   selector: 'app-root',
@@ -72,6 +73,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private authenticationService: AuthenticationService,
     private navController: NavController,
+    private alertService: AlertFnService
   ) {
     this.initializeApp();
   }
@@ -95,4 +97,9 @@ export class AppComponent {
 
     });
   }
+
+  logoutFn() {
+    this.alertService.logoutFn();
+  }
+
 }
