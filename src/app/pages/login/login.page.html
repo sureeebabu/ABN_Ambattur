@@ -8,29 +8,27 @@
     </p>
   </div>
 
-
   <ion-card>
     <ion-segment color="success" [(ngModel)]="type">
       <ion-segment-button value="login" color="danger" checked>
-        Sign In
+        USER
       </ion-segment-button>
       <ion-segment-button value="signup">
-        Sign Up
+        Guest User
       </ion-segment-button>
     </ion-segment>
 
     <div [ngSwitch]="type">
       <ion-list *ngSwitchCase="'login'">
-
-        <form class="ion-padding" [formGroup]="validationsForm" (ngSubmit)="onSubmit(validationsForm.value)">
+        <form  [formGroup]="validationsForm" (ngSubmit)="onSubmit(validationsForm.value)">
           <ion-item>
             <ion-label position="floating" color="success">Email *
             </ion-label>
-            <ion-input type="text" formControlName="email" color="success" clearOnEdit="false"></ion-input>
+            <ion-input type="text" formControlName="email"  clearOnEdit="false"></ion-input>
           </ion-item>
           <div class="validation-errors">
             <ng-container *ngFor="let validation of errorMsg.validationMSG.email">
-              <div class="error-message"
+              <div class="error-message ion-padding-start"
                 *ngIf="validationsForm.get('email').hasError(validation.type) && (validationsForm.get('email').dirty || validationsForm.get('email').touched)">
                 <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
               </div>
@@ -47,7 +45,7 @@
 
           <div class="validation-errors">
             <ng-container *ngFor="let validation of errorMsg.validationMSG.password">
-              <div class="error-message"
+              <div class="error-message ion-padding-start"
                 *ngIf="validationsForm.get('password').hasError(validation.type) && (validationsForm.get('password').dirty || validationsForm.get('password').touched)">
                 <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
               </div>
@@ -65,7 +63,42 @@
 
       <ion-list *ngSwitchCase="'signup'">
 
-        Sign up
+        <form  [formGroup]="guestForm" (ngSubmit)="guestLogin(guestForm.value)">
+          <ion-item>
+            <ion-label position="floating" color="success">Name *
+            </ion-label>
+            <ion-input type="text" formControlName="guestName" clearOnEdit="false"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of errorMsg.validationMSG.name">
+              <div class="error-message ion-padding-start"
+                *ngIf="guestForm.get('guestName').hasError(validation.type) && (guestForm.get('guestName').dirty || guestForm.get('guestName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating" color="success">Mobile No *</ion-label>
+            <ion-input formControlName="guestMobNo" type="text" clearOnEdit="false">
+            </ion-input>
+          </ion-item>
+
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of errorMsg.validationMSG.mobileNo">
+              <div class="error-message ion-padding-start"
+                *ngIf="guestForm.get('guestMobNo').hasError(validation.type) && (guestForm.get('guestMobNo').dirty || guestForm.get('guestMobNo').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="ion-padding-top ion-text-center">
+            <ion-button size="medium" expand="block" fill="outline" color="success" type="submit"
+              [disabled]="!guestForm.valid">Sign In as Guest
+            </ion-button>
+          </div>
+        </form>
 
       </ion-list>
     </div>

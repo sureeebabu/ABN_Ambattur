@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, NavController } from '@ionic/angular';
+import { Platform, NavController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthenticationService } from './services/auth/authentication.service';
@@ -73,7 +73,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private authenticationService: AuthenticationService,
     private navController: NavController,
-    private alertService: AlertFnService
+    private alertService: AlertFnService,
+    private menuCtrl: MenuController
   ) {
     this.initializeApp();
   }
@@ -82,23 +83,24 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
-      // this.authenticationService.authState.subscribe(state => {
-      //   console.log(state);
-      //   // alert(state);
-      //   if (state) {
-      //     if (localStorage.getItem('email') !== null && localStorage.getItem('email') !== undefined) {
-      //       this.userEmail = localStorage.getItem('email');
-      //     }
-      //     this.navController.navigateRoot('/home');
-      //   } else {
-      //     this.navController.navigateRoot('/login');
-      //   }
-      // });
+      this.authenticationService.authState.subscribe(state => {
+        console.log(state);
+        // alert(state);
+        if (state) {
+          if (localStorage.getItem('email') !== null && localStorage.getItem('email') !== undefined) {
+            this.userEmail = localStorage.getItem('email');
+          }
+          this.navController.navigateRoot('/home');
+        } else {
+          this.navController.navigateRoot('/login');
+        }
+      });
 
     });
   }
 
   logoutFn() {
+    this.menuCtrl.close();
     this.alertService.logoutFn();
   }
 

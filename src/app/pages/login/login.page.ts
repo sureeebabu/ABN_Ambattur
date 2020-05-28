@@ -16,6 +16,7 @@ export class LoginPage implements OnInit, OnDestroy {
 
   type = 'login';
   validationsForm: FormGroup;
+  guestForm: FormGroup;
   public showPassword: boolean = true;
   constructor(
     public formBuilder: FormBuilder,
@@ -42,6 +43,20 @@ export class LoginPage implements OnInit, OnDestroy {
         Validators.required
       ])),
     });
+
+    this.guestForm = this.formBuilder.group({
+      guestName : new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      guestMobNo : new FormControl('', Validators.compose([
+        Validators.minLength(10),
+        Validators.maxLength(10),
+        Validators.required,
+        Validators.pattern('^[0-9]*$')
+      ])),
+    });
+
+
   }
 
   getData() {
@@ -57,16 +72,24 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   async onSubmit(values) {
+    this.menuCtrl.enable(true);
     console.log(values);
     this.auth.login();
     console.log(values.email);
     localStorage.setItem('email', values.email);
     this.router.navigateByUrl('/home');
+    this.validationsForm.reset();
+  }
+
+  async guestLogin(values) {
+    this.menuCtrl.enable(true);
+    console.log(values);
   }
 
   ngOnDestroy() {
     this.menuCtrl.enable(true);
     this.validationsForm.reset();
+    this.guestForm.reset();
   }
 
 }
