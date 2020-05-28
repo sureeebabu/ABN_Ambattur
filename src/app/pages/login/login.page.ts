@@ -14,6 +14,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit, OnDestroy {
 
+  type = 'login';
   validationsForm: FormGroup;
   public showPassword: boolean = true;
   constructor(

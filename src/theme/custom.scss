@@ -7,7 +7,8 @@
 }
 
 .error-message {
-    color: #f4f5f8;
+    // color: #f4f5f8;
+    color: #1cdcaf;
 }
 
 .sideMenuBg {
@@ -15,7 +16,7 @@
 }
 
 .custom-loader-class {
-    color: #05b905;
+    color: #1cdcaf;
 }
 
 .noRecordContainer {
@@ -29,9 +30,9 @@
 
 .alertButtonCss {
     button.alert-button:nth-child(1) {
-        color: #05b905;
+        color: #1cdcaf;
     }
     button.alert-button:nth-child(2) {
-        color: #05b905;
+        color: #1cdcaf;
     }
 }
