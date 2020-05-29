@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ConfigService {
 
-  public rootUrl: string = 'http://abn.arkaautomaations.com/API/';
+  //   public rootUrl: string = 'http://abn.arkaautomaations.com/API/';
+  public rootUrl: string = 'https://cors-anywhere.herokuapp.com/http://abn.arkaautomaations.com/API/';
   // headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(
     private http: HttpClient

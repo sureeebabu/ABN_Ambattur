@@ -24,8 +24,8 @@
             <ion-col *ngFor="let j of json | filter:term" size="4" class="animated rubberBand" routerLink="/memberslist"
                 routerDirection="forward">
                 <div class="card-square card">
-                    <img [src]="j.img" class="ion-padding-start ion-padding-end">
-                    <ion-text color="success">{{j.title}}</ion-text>
+                    <img [src]="j.categoryImage" class="ion-padding-start ion-padding-end">
+                    <ion-text color="success">{{j.categoryName}}</ion-text>
                 </div>
             </ion-col>
             <!-- <ion-col size="4" class="animated rubberBand">
@@ -85,10 +85,3 @@
         </ion-row>
     </ion-grid>
 </ion-content>
-<!-- <ion-footer>
-    <ion-title class="ion-text-center">
-        <ion-button (click)="logutfn()" color="success">
-            Logout
-        </ion-button>
-    </ion-title>
-</ion-footer> -->

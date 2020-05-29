@@ -83,18 +83,18 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
-      this.authenticationService.authState.subscribe(state => {
-        console.log(state);
-        // alert(state);
-        if (state) {
-          if (localStorage.getItem('email') !== null && localStorage.getItem('email') !== undefined) {
-            this.userEmail = localStorage.getItem('email');
-          }
-          this.navController.navigateRoot('/home');
-        } else {
-          this.navController.navigateRoot('/login');
-        }
-      });
+      // this.authenticationService.authState.subscribe(state => {
+      //   console.log(state);
+      //   // alert(state);
+      //   if (state) {
+      //     if (localStorage.getItem('email') !== null && localStorage.getItem('email') !== undefined) {
+      //       this.userEmail = localStorage.getItem('email');
+      //     }
+      //     this.navController.navigateRoot('/home');
+      //   } else {
+      //     this.navController.navigateRoot('/login');
+      //   }
+      // });
 
     });
   }
